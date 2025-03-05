@@ -14,17 +14,20 @@
     <header>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
       <script>
-        var sound = new Howl({
-          src: ["public/assets/audio/PECA DE BONITA KARAOKE.mp3"],
-          autoplay: true,
-          loop: true,
-          volume: 1,
-          onplayerror: function () {
-            console.log("Error al intentar reproducir el audio");
-          },
+        document.addEventListener("DOMContentLoaded", function() {
+          var sound = new Howl({
+            src: ["public/assets/audio/PECA DE BONITA KARAOKE.mp3"],
+            autoplay: true,
+            loop: true,
+            volume: 1,
+            onplayerror: function () {
+              console.log("Error al intentar reproducir el audio");
+            },
+          });
+          sound.play();
         });
-        sound.play();
       </script>
+      
       <div class="container-fluid p-0">
         <div class="text-center" style="background-color: rgb(249, 241, 231)">
           <img src="public/assets/Home.jpg" class="img-fluid d-block d-md-none w-100 mx-auto" alt="Home" />
