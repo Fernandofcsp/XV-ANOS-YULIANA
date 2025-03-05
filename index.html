@@ -1,47 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>XV AÑOS YULIANA</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <audio id="audioPlayer" autoplay loop muted>
-        <source src="public/assets/audio/PECA DE BONITA KARAOKE.mp3" type="audio/mpeg">
+        <source
+          src="public/assets/audio/PECA DE BONITA KARAOKE.mp3"
+          type="audio/mpeg"
+        />
         Tu navegador no soporta la etiqueta de audio.
       </audio>
-      
+
       <script>
-        var audio = document.getElementById('audioPlayer');
-      
+        var audio = document.getElementById("audioPlayer");
+
         // Verificamos cuando el audio empieza a reproducirse
-        audio.addEventListener('play', function() {
-          console.log('El audio está reproduciéndose');
+        audio.addEventListener("play", function () {
+          console.log("El audio está reproduciéndose");
         });
-      
+
         // Verificamos cuando el audio se detiene
-        audio.addEventListener('pause', function() {
-          console.log('El audio se ha detenido');
+        audio.addEventListener("pause", function () {
+          console.log("El audio se ha detenido");
         });
-        
+
         // Después de un segundo, quitamos el atributo muted
-        setTimeout(function() {
+        setTimeout(function () {
           audio.muted = false;
         }, 1000); // 1 segundo
       </script>
-      
-      
-    <!-- Este es un comentario de una línea -->
-          <!-- Contenedor con iframe de Canva -->
-    <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px;">
-      <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
-        src="https://www.canva.com/design/DAGgt_0xdlk/bjpYfw8bl5wK9TMYYvgTZw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-      </iframe>
-    </div>
-  
+
+ 
+      <!-- Imágenes con clases responsivas de Bootstrap -->
+      <div class="container-fluid p-0">
+        <img src="public/assets/Home.jpg" class="img-fluid" alt="Home" />
+        <img
+          src="public/assets/Our Story.jpg"
+          class="img-fluid"
+          alt="Our Story"
+        />
+        <img src="public/assets/Details.jpg" class="img-fluid" alt="Details" />
+        <img src="public/assets/RSVP.jpg" class="img-fluid" alt="RSVP" />
+      </div>
+
+      <!-- iFrame centrado -->
+      <div class="d-flex justify-content-center">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe
+            src="https://canva-embed.com/api/iframe?url=https%3A%2F%2Fwww.tickcounter.com%2Fcountdown%2F6787741%2Fmis-xv-anos&amp;key=462812a26b593f2dbfbfcbb14f6d699a"
+            class="embed-responsive-item"
+            allowfullscreen="allowfullscreen"
+            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Imagen con mapa de imagen -->
+      <img
+        src="public/assets/5.jpg"
+        class="img-fluid"
+        usemap="#mapa"
+        alt="Imagen con mapa"
+      />
+
+      <!-- Definición del mapa de imagen -->
+      <map name="mapa">
+        <!-- Área definida como un rectángulo -->
+        <area
+          shape="rect"
+          coords="100,50,150,100"
+          href="https://maps.app.goo.gl/FhwEWUyCEz3Npeye7"
+          target="_blank"
+          alt="Ubicación"
+          title="Haz clic aquí para más información"
+        />
+      </map>
+
+      <!-- Más imágenes -->
+      <img src="public/assets/6.jpg" class="img-fluid" alt="Imagen 6" />
+      <img src="public/assets/7.jpg" class="img-fluid" alt="Imagen 7" />
+      <img src="public/assets/8.jpg" class="img-fluid" alt="Imagen 8" />
+    </header>
+
+    <main>
+      <!-- Contenido principal (si es necesario) -->
+    </main>
 
     <!-- Agregar los scripts de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
