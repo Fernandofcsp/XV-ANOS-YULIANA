@@ -14,18 +14,23 @@
     <header>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
       <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          var sound = new Howl({
-            src: ["public/assets/audio/PECA DE BONITA KARAOKE.mp3"],
-            autoplay: true,
-            loop: true,
-            volume: 1,
-            onplayerror: function () {
-              console.log("Error al intentar reproducir el audio");
-            },
-          });
-          sound.play();
+        var sound = new Howl({
+          src: ["public/assets/audio/PECA DE BONITA KARAOKE.mp3"],
+          autoplay: true,
+          loop: true,
+          volume: 1,
+          muted: true,  // El audio empieza en silencio
+          onplayerror: function () {
+            console.log("Error al intentar reproducir el audio");
+          },
         });
+      
+        sound.play();
+      
+        // Desmutea el sonido tras la carga de la página
+        window.onload = function() {
+          sound.mute(false);  // Desmutea el audio
+        };
       </script>
       
       <div class="container-fluid p-0">
