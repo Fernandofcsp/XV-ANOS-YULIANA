@@ -9,10 +9,31 @@
   </head>
   <body>
     <header>
-      <audio autoplay loop>
-        <source src="public/assets/audio/EDEN MUÑOZ - PECA DE BONITA KARAOKE (DJ RAMCAL EDIT).mp3" type="audio/mp3">
+      <audio id="audioPlayer" autoplay loop muted>
+        <source src="public/assets/audio/PECA DE BONITA KARAOKE.mp3" type="audio/mpeg">
         Tu navegador no soporta la etiqueta de audio.
       </audio>
+      
+      <script>
+        var audio = document.getElementById('audioPlayer');
+      
+        // Verificamos cuando el audio empieza a reproducirse
+        audio.addEventListener('play', function() {
+          console.log('El audio está reproduciéndose');
+        });
+      
+        // Verificamos cuando el audio se detiene
+        audio.addEventListener('pause', function() {
+          console.log('El audio se ha detenido');
+        });
+        
+        // Después de un segundo, quitamos el atributo muted
+        setTimeout(function() {
+          audio.muted = false;
+        }, 1000); // 1 segundo
+      </script>
+      
+      
     <!-- Este es un comentario de una línea -->
           <!-- Contenedor con iframe de Canva -->
     <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px;">
