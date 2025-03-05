@@ -12,32 +12,12 @@
   </head>
   <body>
     <header>
-      <audio id="audioPlayer" autoplay loop muted>
-        <source
-          src="public/assets/audio/PECA DE BONITA KARAOKE.mp3"
-          type="audio/mpeg"
-        />
+      <audio id="audioPlayer" autoplay loop controls>
+        <source src="public/assets/audio/PECA DE BONITA KARAOKE.mp3" type="audio/mpeg">
         Tu navegador no soporta la etiqueta de audio.
       </audio>
-
-      <script>
-        var audio = document.getElementById("audioPlayer");
-
-        // Verificamos cuando el audio empieza a reproducirse
-        audio.addEventListener("play", function () {
-          console.log("El audio está reproduciéndose");
-        });
-
-        // Verificamos cuando el audio se detiene
-        audio.addEventListener("pause", function () {
-          console.log("El audio se ha detenido");
-        });
-
-        // Después de un segundo, quitamos el atributo muted
-        setTimeout(function () {
-          audio.muted = false;
-        }, 1000); // 1 segundo
-      </script>
+      
+            
 
  
       <!-- Imágenes con clases responsivas de Bootstrap -->
