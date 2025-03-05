@@ -19,20 +19,12 @@
           autoplay: true,
           loop: true,
           volume: 1,
-          muted: true,  // El audio empieza en silencio
           onplayerror: function () {
             console.log("Error al intentar reproducir el audio");
           },
         });
-      
         sound.play();
-      
-        // Desmutea el sonido tras la carga de la página
-        window.onload = function() {
-          sound.mute(false);  // Desmutea el audio
-        };
       </script>
-      
       <div class="container-fluid p-0">
         <div class="text-center" style="background-color: rgb(249, 241, 231)">
           <img src="public/assets/Home.jpg" class="img-fluid d-block d-md-none w-100 mx-auto" alt="Home" />
