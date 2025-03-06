@@ -15,20 +15,31 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
       <script>
         var sound = new Howl({
-          src: ["public/assets/audio/PECA DE BONITA KARAOKE.mp3"],
-          autoplay: true,
-          loop: true,
-          volume: 1,
-          onplayerror: function () {
-            console.log("Error al intentar reproducir el audio");
-          },
+            src: ["public/assets/audio/PECA DE BONITA KARAOKE.mp3"],
+            loop: true,
+            volume: 1,
+            onplayerror: function () {
+                console.log("Error al intentar reproducir el audio");
+            },
         });
-        sound.play();
-      </script>
+    
+        function reproducirAudio() {
+            sound.play();
+            
+            // Deshabilita el evento de clic removiendo el onclick
+            document.getElementById("btnReproducir").onclick = null;
+            
+            // Opcional: Cambia el cursor para indicar que ya no es clickeable
+            document.getElementById("btnReproducir").style.cursor = "default";
+        }
+    </script>
       <div class="container-fluid p-0">
         <div class="text-center" style="background-color: rgb(249, 241, 231)">
-          <img src="public/assets/Home.jpg" class="img-fluid d-block d-md-none w-100 mx-auto" alt="Home" />
-          <img src="public/assets/Home.jpg" class="img-fluid d-none d-md-block mx-auto" alt="Home" />
+          <img src="public/assets/Home.jpg" class="img-fluid d-block d-md-none w-100 mx-auto" usemap="#reproducir" alt="Home" />
+          <img src="public/assets/Home.jpg" class="img-fluid d-none d-md-block mx-auto" usemap="#reproducir" alt="Home" />
+          <map name="reproducir">
+            <area id="btnReproducir" style="cursor: pointer;" target="" alt="Reproducir" title="Reproducir" onclick="reproducirAudio()" coords="226,1063,387,1194" shape="rect">
+        </map>
         </div>
         <div class="text-center" style="background-color: rgb(255, 255, 255)">
           <img src="public/assets/Our Story.jpg" class="img-fluid d-block d-md-none w-100 mx-auto" alt="Our Story" />
